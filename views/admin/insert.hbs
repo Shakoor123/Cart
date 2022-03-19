@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  </head>
+  <body>
+{{!-- nav bar veenam --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">HI Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active"href="/">Insert_product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">All_order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">All_user</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{{!-- insertion form --}}
+<section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Log in</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <form action="/users/insert" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="title" placeholder="Title" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="discription" placeholder="Discription" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="price" placeholder="Price" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" accept="image/png, image/jpeg" class="form-control" name="pic" required>select image
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Log In</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">Remember Me
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#" style="color: #fff">Forgot Password</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  </body>
+  </html>

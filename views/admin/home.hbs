@@ -1,0 +1,48 @@
+{{!-- nav bar veenam --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">HI Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active"href="#">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/all_orders">All_order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/users/all_users">All_user</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{{!-- all product details --}}
+<table class="table" style="margin-left:50px;margin-top:20px;">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">discription</th>
+      <th scope="col">Price</th>
+      <th scope="col">images</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each result}}
+    <tr>
+      <td>{{this.title}}</td>
+      <td>{{this.discrption}}</td>
+      <td>{{this.price}}</td>
+      <td> <img style="width:100px;height:100px;" src="/images/{{this.image}}"></td>
+      <td>
+      <a href="/users/edit-product/{{this.title}}" class="btn btn-primary">Edit</a>
+      <a href="/users/delete-product/{{this.title}}" class="btn btn-danger">Remove</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

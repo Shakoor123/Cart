@@ -1,0 +1,69 @@
+{{!-- nav bar veenam --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">K-cart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#foot">About</a>
+        </li>
+      </ul>
+      {{#if user}}
+        <form action="logout">
+          <a href="/logout" class="btn">logout</a>
+        </form>
+      {{else}}
+      <form action="login">
+
+        <a href="/login" class="btn">login</a>
+      </form>
+     {{/if}}
+    </div>
+  </div>
+</nav>
+
+{{!-- card section --}}
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  {{#if user}}
+    <center><h6 style="margin-left:60px;">Hi&nbsp;&nbsp;{{user.name}}</h6></center>
+  {{/if}}
+</nav>
+<div class="row" style="padding:20px; margin-right:20px;">
+  {{#each result}}
+  <div class="col-sm-3" style="margin-top: 10px;">
+    <div class="card bg-info col d-flex justify-content-cente" style="width: 18rem; padding:30px;">
+      <img class="card-img-top" style="width:230px;height:230px;" src="/images/{{this.image}}">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">Note:{{this.discrption}}.</p>
+        <p class="card-text">RS:{{this.price}}.</p>
+        <a href="#" class="btn btn-primary">Add-Cart</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+{{!-- information details --}}
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center bg-warning py-5 ">© 2022 Copyright:
+    <a href="https://abdulshakoor.ml/"> Abdul_Shakoor</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
